@@ -146,12 +146,32 @@ function renderSectionTable(sectionTitle, header, sectionRows) {
     if (idx % 2 === 1) tr.style.background = "#f8fbfc";
 
     for (let i = 0; i < colNames.length; i++) {
-      const td = document.createElement("td");
-      td.textContent = ((r[i] ?? "") + "").trim();
-      td.style.padding = "10px 12px";
-      td.style.borderBottom = "1px solid rgba(0,0,0,.06)";
-      tr.appendChild(td);
-    }
+  const td = document.createElement("td");
+  const value = ((r[i] ?? "") + "").trim();
+
+  // ✅ Columna 3 del sheet (C=ENLACE) => acá es r[1] porque quitamos la columna A
+  const isLinkCol = (i === 1);
+
+  if (isLinkCol && value) {
+    const a = document.createElement("a");
+    a.href = value;
+    a.textContent = "Visit";
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+
+    // OPCIÓN 1: estilo tipo botón como el resto (recomendado)
+    a.className = "btn secondary";
+    a.style.padding = "8px 12px"; // para que no sea tan grande dentro de la tabla
+
+    td.appendChild(a);
+  } else {
+    td.textContent = value;
+  }
+
+  td.style.padding = "10px 12px";
+  td.style.borderBottom = "1px solid rgba(0,0,0,.06)";
+  tr.appendChild(td);
+}
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);

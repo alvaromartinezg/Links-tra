@@ -129,7 +129,7 @@ function renderSectionTable(sectionTitle, header, sectionRows) {
     const th = document.createElement("th");
     th.textContent = name;
     th.style.textAlign = "left";
-    th.style.padding = "6px 8px";
+    th.style.padding = "4px 6px";
     th.style.background = "#cfd8dc";
     th.style.position = "sticky";
     th.style.top = "0";
@@ -168,7 +168,7 @@ function renderSectionTable(sectionTitle, header, sectionRows) {
     td.textContent = value;
   }
 
-  td.style.padding = "6px 8px";
+  td.style.padding = "4px 6px";
   td.style.borderBottom = "1px solid rgba(0,0,0,.06)";
   tr.appendChild(td);
 }

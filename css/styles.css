@@ -134,7 +134,11 @@ body{
   outline: none;
   box-shadow: 0 0 0 4px var(--ring);
 }
-
+.btn-table{
+  padding:4px 8px;
+  font-size:12px;
+  border-radius:10px;
+}
 .btn.secondary{
   background:#eef7fb;
   color:#0c4455;

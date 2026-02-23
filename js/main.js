@@ -160,8 +160,7 @@ function renderSectionTable(sectionTitle, header, sectionRows) {
     a.rel = "noopener noreferrer";
 
     // OPCIÓN 1: estilo tipo botón como el resto (recomendado)
-    a.className = "btn secondary";
-    a.style.padding = "8px 12px"; // para que no sea tan grande dentro de la tabla
+    a.className = "btn secondary btn-table";
 
     td.appendChild(a);
   } else {

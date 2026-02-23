@@ -200,3 +200,25 @@ body{
   .header{ padding:14px 14px }
   .header img{ height:48px }
 }
+/* Forzar mismas proporciones en todas las tablas */
+.section table{
+  table-layout: fixed;
+}
+
+/* Anchos por columna: 1=NAME, 2=LINK, 3=COMMENTS */
+.section table th:nth-child(1),
+.section table td:nth-child(1){ width: 45%; }
+
+.section table th:nth-child(2),
+.section table td:nth-child(2){ width: 110px; }  /* Link fijo */
+
+.section table th:nth-child(3),
+.section table td:nth-child(3){ width: 55%; }
+
+/* Opcional: evita que NAME/COMMENTS rompan feo */
+.section table td:nth-child(1),
+.section table td:nth-child(3){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
